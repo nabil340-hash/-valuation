@@ -1,29 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Blog Simple</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mon Blog projet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Mon Blog Minimaliste</h1>
+
+<body class="bg-light">
+    <header class="bg-dark text-white text-center py-3">
+        <h1>Mon Blog </h1>
     </header>
-    
-    <div class="container">
-        <div class="post">
-            <h2>Bienvenue sur mon blog</h2>
-            <p>Ceci est un exemple d'un blog simple et épuré. Il n'y a rien de superflu ici, juste du contenu de qualité à lire.</p>
+
+    <div class="container mt-5">
+        <div class="post mb-4 p-4 bg-white shadow-sm rounded">
+            <h2 class="h3">Bienvenue sur mon blog</h2>
+            <p>Vivamus convallis dignissim velit sit amet condimentum. Maecenas sit amet pulvinar lorem, nec tempor
+                tellus. Ut sed nunc quam. Vivamus ac justo sapien. Donec semper, est eget malesuada rutrum, nisi sem
+                sagittis justo, sed imperdiet ipsum tortor non orci. Integer quis erat lacinia, laoreet nisl in,
+                dignissim magna. Morbi ut nibh a quam accumsan suscipit. In at elementum nibh. Nam urna dui, facilisis a
+                porta scelerisque, malesuada eget erat..</p>
         </div>
-        <div class="post">
-            <h2>Un autre article intéressant</h2>
-            <p>Un autre exemple d'article. Ce blog est conçu pour être léger, rapide et facile à naviguer.</p>
+        <div class="post mb-4 p-4 bg-white shadow-sm rounded">
+            <h2 class="h3">Un autre article intéressant</h2>
+            <button class="btn btn-primary" onclick="toggleDetails()">Plus d'informations</button>
+            <p><strong>Nombre de clics sur le bouton :</strong> <span id="clickCount">0</span></p>
+            <div class="details mt-3" id="details" style="display:none;">
+                <p>Pellentesque vitae varius libero, pellentesque rhoncus est. Nam lacinia suscipit sapien et accumsan.
+                    Sed et viverra tortor. Sed id risus tellus. Mauris euismod ac sem vitae iaculis. Etiam eu dignissim
+                    ex, et viverra tortor. Nam sagittis mauris eu ipsum aliquam euismod. Nullam pellentesque eros a
+                    turpis fringilla, non dictum metus vehicula. Suspendisse euismod quis erat eget vulputate. Nullam
+                    auctor ipsum non diam varius, at posuere enim condimentum. Donec lacus nibh, egestas sed interdum
+                    ut, consectetur quis nunc. Pellentesque venenatis orci quis urna ornare, id fringilla justo euismod.
+                    Maecenas in fermentum lacus. Aliquam vitae libero tempor, venenatis tortor at, efficitur massa.
+                    Suspendisse potenti. Etiam a iaculis elit.</p>
+            </div>
         </div>
     </div>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-2 position-fixed w-100 bottom-0">
         <p>© 2025 Mon Blog Simple</p>
     </footer>
+
+    <script>
+        let clickCounter = 0; ls
+
+        function toggleDetails() {
+            const details = document.getElementById('details');
+            const button = event.target;
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+                button.textContent = 'Moins d\'informations'; 
+            } else {
+                details.style.display = 'none';
+                button.textContent = 'Plus d\'informations'; 
+            }
+            clickCounter++;
+            document.getElementById('clickCount').textContent = clickCounter;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
